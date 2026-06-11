@@ -118,7 +118,7 @@ def procesar_archivos(archivos_subidos):
 
 # --- Interfaz de Usuario (UI) ---
 
-st.title("📊 Sistema de Análisis Académico")
+st.title("📊 Sistema de Análisis De Rendimiento Académico")
 
 st.markdown("Sube tus archivos de calificaciones para visualizar el rendimiento del curso de forma interactiva.")
 
