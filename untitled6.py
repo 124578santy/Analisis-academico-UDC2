@@ -118,7 +118,6 @@ if archivos:
         with tab3:
             st.header("Análisis Gráfico")
 
-            # NUEVO: Se añade la tercera opción al botón de radio
             tipo_grafico = st.radio(
                 "Selecciona qué deseas visualizar:",
                 [
@@ -146,22 +145,12 @@ if archivos:
                 st.subheader(titulo)
                 st.bar_chart(data_to_plot, color="#4CAF50")
 
-            # NUEVO: Bloque que calcula y genera el gráfico general del grupo
+            # SECCIÓN MODIFICADA: Ahora despliega un gráfico de líneas
             elif tipo_grafico == "Comparativa de Todos los Estudiantes (Promedios)":
                 st.subheader("Promedio General por Estudiante")
                 st.markdown("Visualiza el rendimiento de todo el grupo ordenado de **mayor a menor**.")
 
                 # Clonamos para calcular promedios sin alterar el original
                 df_comparativa = df_estudiantes.copy()
-                df_comparativa['Promedio Final'] = df_comparativa[grade_columns].mean(axis=1)
-
-                # Ordenamos de forma descendente y asignamos el Nombre como índice para el eje X
-                df_comparativa = df_comparativa.sort_values(by='Promedio Final', ascending=False)
-                df_grafico = df_comparativa.set_index('Nombre')['Promedio Final']
-
-                # Desplegamos el gráfico interactivo en un tono púrpura elegante
-                st.bar_chart(df_grafico, color="#9C27B0")
-
-else:
-    st.info("👈 Por favor, sube un archivo CSV para comenzar el análisis.")
+                df_comparativa
 
