@@ -126,7 +126,7 @@ st.markdown("Sube tus archivos de calificaciones para visualizar el rendimiento 
 
 # 1. Zona de carga de archivos
 
-archivos = st.file_uploader("Sube tus archivos de calificaciones (CSV o TXT)", type=['csv', 'txt'], accept_multiple_files=True)
+archivos = st.file_uploader("Sube tus archivos de calificaciones (CSV)", type=['csv', 'txt'], accept_multiple_files=True)
 
 
 
@@ -328,4 +328,4 @@ if archivos:
 
 else:
 
-    st.info("👈 Por favor, sube un archivo CSV o TXT para comenzar el análisis.")
+    st.info("👈 Por favor, sube un archivo CSV para comenzar el análisis de rendiemiento.")
